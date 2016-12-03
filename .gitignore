@@ -1,0 +1,59 @@
+## [ https://github.com/github/gitignore/blob/master/Global/Linux.gitignore ]
+*~
+
+# temporary files which can be created if a process still has a handle open of a deleted file
+.fuse_hidden*
+
+# KDE directory preferences
+.directory
+
+# Linux trash folder which might appear on any partition or disk
+.Trash-*
+
+# .nfs files are created when an open file is removed but is still being accessed
+.nfs*
+
+## [ https://github.com/github/gitignore/blob/master/Global/Vim.gitignore ]
+# swap
+[._]*.s[a-w][a-z]
+[._]s[a-w][a-z]
+# session
+Session.vim
+# temporary
+.netrwhist
+*~
+# auto-generated tag files
+tags
+
+## [ https://github.com/github/gitignore/blob/master/Laravel.gitignore ]
+vendor/
+node_modules/
+
+# Laravel 4 specific
+bootstrap/compiled.php
+
+# Laravel 5 & Lumen specific
+bootstrap/cache/
+.env.*.php
+.env.php
+.env
+
+# Rocketeer PHP task runner and deployment package. https://github.com/rocketeers/rocketeer
+.rocketeer/
+
+## [ https://github.com/github/gitignore/blob/master/Composer.gitignore ]
+composer.phar
+/vendor/
+
+# Commit your application's lock file http://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file
+# You may choose to ignore a library lock file http://getcomposer.org/doc/02-libraries.md#lock-file
+# composer.lock
+
+## Project definitions
+
+/public/storage
+/storage/*.key
+/.idea
+Homestead.json
+Homestead.yaml
+amazon-mws-*.zip
