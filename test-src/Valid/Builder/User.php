@@ -1,7 +1,7 @@
 <?php
 
 
-namespace John\Eloquent\Test\Valid\Builder;
+namespace Illuminate\Database\Eloquent\Test\Valid\Builder;
 
 class User extends \Illuminate\Database\Eloquent\Builder {
 

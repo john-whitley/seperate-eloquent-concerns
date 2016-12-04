@@ -31,14 +31,14 @@ back to the default builder or collection.
 To force the existance of a custom builder and a custom collection,
 add these traits to your model:
 ```php
-  use \John\Eloquent\BaseTrait, \John\Eloquent\EnforcedSeparateBuilderTrait, \John\Eloquent\EnforcedSeparateCollectionTrait;
+  use \Illuminate\Database\Eloquent\SeparateConcernsTrait, \Illuminate\Database\Eloquent\EnforcedSeparateBuilderTrait, \Illuminate\Database\Eloquent\EnforcedSeparateCollectionTrait;
 ```
 
 To allow the existance of a custom builder and a custom collection, but
 fall back to the default builder or collection should they be absent;
 add these traits to your model:
 ```php
-  use \John\Eloquent\BaseTrait, \John\Eloquent\OptionalSeparateBuilderTrait, \John\Eloquent\OptionalSeparateCollectionTrait;
+  use \Illuminate\Database\Eloquent\SeparateConcernsTrait, \Illuminate\Database\Eloquent\OptionalSeparateBuilderTrait, \Illuminate\Database\Eloquent\OptionalSeparateCollectionTrait;
 ```
 
 You may choose to use optional collection and enforced builder; or

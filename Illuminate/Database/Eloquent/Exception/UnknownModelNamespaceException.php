@@ -1,6 +1,6 @@
 <?php
 
-namespace John\Eloquent\Exception;
+namespace Illuminate\Database\Eloquent\Exception;
 
 class UnknownModelNamespaceException extends \Exception
 {

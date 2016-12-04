@@ -1,6 +1,6 @@
 <?php
 
-namespace John\Eloquent\Exception;
+namespace Illuminate\Database\Eloquent\Exception;
 
 /**
  * The class given as an \Illuminate\Database\Eloquent\Builder did not

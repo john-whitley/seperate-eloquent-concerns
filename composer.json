@@ -11,7 +11,7 @@
     ],
     "autoload": {
         "psr-4": {
-            "John\\Eloquent\\": "John/Eloquent/"
+            "Illuminate\\Database\\Eloquent\\": "Illuminate/Database/Eloquent/"
         }
     },
     "autoload-dev": {
@@ -19,7 +19,7 @@
             "tests/TestCase.php"
         ],
         "psr-4": {
-            "John\\Eloquent\\Test\\": "test-src/"
+            "Illuminate\\Database\\Eloquent\\Test\\": "test-src/"
         }
     },
     "require": {
@@ -34,9 +34,9 @@
             "@phpcs"
         ],
         "phpunit": "phpunit",
-        "phpmd": "phpmd John/ text cleancode,codesize,controversial,design,naming,unusedcode",
-        "phpcs": "phpcs -s --standard=./CodeSnifferRuleset.xml John",
-        "phpcbf": "phpcbf -s --standard=./CodeSnifferRuleset.xml John"
+        "phpmd": "phpmd Illuminate/ text cleancode,codesize,controversial,design,naming,unusedcode",
+        "phpcs": "phpcs -s --standard=./CodeSnifferRuleset.xml Illuminate",
+        "phpcbf": "phpcbf -s --standard=./CodeSnifferRuleset.xml Illuminate"
     },
     "require-dev": {
         "phpunit/phpunit": "^5.6",

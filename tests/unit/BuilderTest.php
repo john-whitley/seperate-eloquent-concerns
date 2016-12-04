@@ -6,10 +6,10 @@ class BuilderTest extends \TestCase {
    * Test that the builder can be generated from a valid class
    */
   public function testValidUserCanMakeBuilderInstance() {
-    $userModel = new \John\Eloquent\Test\Valid\Model\User();
+    $userModel = new \Illuminate\Database\Eloquent\Test\Valid\Model\User();
 
     $this->assertInstanceOf(
-      \John\Eloquent\Test\Valid\Model\User::class,
+      \Illuminate\Database\Eloquent\Test\Valid\Model\User::class,
       $userModel,
       'User model is a valid model class'
     );
@@ -17,7 +17,7 @@ class BuilderTest extends \TestCase {
     $userBuilder = $userModel->newQuery();
 
     $this->assertInstanceOf(
-      \John\Eloquent\Test\Valid\Builder\User::class,
+      \Illuminate\Database\Eloquent\Test\Valid\Builder\User::class,
       $userBuilder,
       'User builder is a valid builder class'
     );
@@ -33,11 +33,11 @@ class BuilderTest extends \TestCase {
    * from the model.
    */
   public function testModelCanCallNameIsNotNullOnBuilder() {
-    $userModel = new \John\Eloquent\Test\Valid\Model\User();
+    $userModel = new \Illuminate\Database\Eloquent\Test\Valid\Model\User();
     $userQuery = $userModel->nameIsNotNull();
 
     $this->assertInstanceOf(
-      \John\Eloquent\Test\Valid\Builder\User::class,
+      \Illuminate\Database\Eloquent\Test\Valid\Builder\User::class,
       $userQuery,
       'Scope model can be called from the model when implemented on the builder'
     );
@@ -56,11 +56,11 @@ class BuilderTest extends \TestCase {
    * from the builder.
    */
   public function testBuilderCanCallNameIsNotNullOnBuilder() {
-    $userModel = new \John\Eloquent\Test\Valid\Model\User();
+    $userModel = new \Illuminate\Database\Eloquent\Test\Valid\Model\User();
     $userQuery = $userModel->newQuery();
 
     $this->assertInstanceOf(
-      \John\Eloquent\Test\Valid\Builder\User::class,
+      \Illuminate\Database\Eloquent\Test\Valid\Builder\User::class,
       $userQuery,
       'Scope model can be called from the model when implemented on the builder'
     );
@@ -81,9 +81,9 @@ class BuilderTest extends \TestCase {
    * an invalid namespace.
    */
   public function testModelMustHaveCorrectName() {
-    $this->expectException(\John\Eloquent\Exception\UnknownModelNamespaceException::class);
+    $this->expectException(\Illuminate\Database\Eloquent\Exception\UnknownModelNamespaceException::class);
 
-    $userModel = new \John\Eloquent\Test\Valid\M\User();
+    $userModel = new \Illuminate\Database\Eloquent\Test\Valid\M\User();
     $userQuery = $userModel->newQuery();
   }
 
@@ -92,9 +92,9 @@ class BuilderTest extends \TestCase {
    * not defined.
    */
   public function testModelMustHaveCorrispondingBuilder() {
-    $this->expectException(\John\Eloquent\Exception\MissingBuilderException::class);
+    $this->expectException(\Illuminate\Database\Eloquent\Exception\MissingBuilderException::class);
 
-    $userModel = new \John\Eloquent\Test\Valid\Model\MissingBuilder();
+    $userModel = new \Illuminate\Database\Eloquent\Test\Valid\Model\MissingBuilder();
     $userQuery = $userModel->newQuery();
   }
 
@@ -103,9 +103,9 @@ class BuilderTest extends \TestCase {
    * not a subclass of Eloquent\Builder.
    */
   public function testModelMustHaveValidCorrispondingBuilder() {
-    $this->expectException(\John\Eloquent\Exception\BuilderNotBuilderException::class);
+    $this->expectException(\Illuminate\Database\Eloquent\Exception\BuilderNotBuilderException::class);
 
-    $userModel = new \John\Eloquent\Test\Valid\Model\InvalidBuilder();
+    $userModel = new \Illuminate\Database\Eloquent\Test\Valid\Model\InvalidBuilder();
     $userQuery = $userModel->newQuery();
   }
 

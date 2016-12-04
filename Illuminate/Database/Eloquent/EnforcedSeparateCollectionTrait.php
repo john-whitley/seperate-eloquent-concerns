@@ -1,6 +1,6 @@
 <?php
 
-namespace John\Eloquent;
+namespace Illuminate\Database\Eloquent;
 
 trait EnforcedSeparateCollectionTrait
 {
@@ -10,10 +10,10 @@ trait EnforcedSeparateCollectionTrait
      *
      * @return string the name of the class to use as the collection
      *
-     * @throws \John\Eloquent\Exception\MissingCollectionException there
+     * @throws \Illuminate\Database\Eloquent\Exception\MissingCollectionException there
      *         is no class with the correct name to be the custom
      *         collection.
-     * @throws \John\Eloquent\Exception\CollectionNotCollectionException
+     * @throws \Illuminate\Database\Eloquent\Exception\CollectionNotCollectionException
      *         there is a class with the correct name to be the
      *         custom eloquent collection, but it does not inherit from
      *         \Illuminate\Database\Eloquent\Collection.
@@ -28,13 +28,13 @@ trait EnforcedSeparateCollectionTrait
         }
 
         if (is_null($customClass)) {
-            throw new \John\Eloquent\Exception\MissingCollectionException($this);
+            throw new \Illuminate\Database\Eloquent\Exception\MissingCollectionException($this);
         }
 
         if (is_subclass_of($customClass, \Illuminate\Database\Eloquent\Collection::class)) {
             return $customClass;
         }
 
-        throw new \John\Eloquent\Exception\CollectionNotCollectionException($customClass);
+        throw new \Illuminate\Database\Eloquent\Exception\CollectionNotCollectionException($customClass);
     }
 }

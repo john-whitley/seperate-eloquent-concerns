@@ -1,6 +1,6 @@
 <?php
 
-namespace John\Eloquent;
+namespace Illuminate\Database\Eloquent;
 
 trait OptionalSeparateBuilderTrait
 {
@@ -10,7 +10,7 @@ trait OptionalSeparateBuilderTrait
      *
      * @return string the name of the class to use as the builder
      *
-     * @throws \John\Eloquent\Exception\BuilderNotBuilderException there
+     * @throws \Illuminate\Database\Eloquent\Exception\BuilderNotBuilderException there
      *         is a class with the correct name to be the custom
      *         eloquent builder, but it does not inherit from
      *         \Illuminate\Database\Eloquent\Builder.
@@ -32,6 +32,6 @@ trait OptionalSeparateBuilderTrait
             return $customBuilderClass;
         }
 
-        throw new \John\Eloquent\Exception\BuilderNotBuilderException($customBuilderClass);
+        throw new \Illuminate\Database\Eloquent\Exception\BuilderNotBuilderException($customBuilderClass);
     }
 }

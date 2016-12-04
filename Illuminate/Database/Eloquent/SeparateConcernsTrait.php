@@ -1,8 +1,8 @@
 <?php
 
-namespace John\Eloquent;
+namespace Illuminate\Database\Eloquent;
 
-trait BaseTrait
+trait SeparateConcernsTrait
 {
     static protected $eloquentRootPathName;
     static protected $eloquentSpecificName;
@@ -51,7 +51,7 @@ trait BaseTrait
      *
      * @return void
      *
-     * @throws \John\Eloquent\Exception\UnknownModelNamespaceException
+     * @throws \Illuminate\Database\Eloquent\Exception\UnknownModelNamespaceException
      *         the model was not in a namespace with a token (directory)
      *         as recieved from getModelPathName().
      */
@@ -71,7 +71,10 @@ trait BaseTrait
                 return;
             }
 
-            throw new \John\Eloquent\Exception\UnknownModelNamespaceException($className, $modelPathName);
+            throw new \Illuminate\Database\Eloquent\Exception\UnknownModelNamespaceException(
+                $className,
+                $modelPathName
+            );
         }
     }
 
@@ -131,8 +134,8 @@ trait BaseTrait
      * @return string|null the name of the class to use as the builder,
      *         or null if there is no custom builder.
      *
-     * @see \John\Eloquent\EnforcedSeparateBuilderTrait
-     * @see \John\Eloquent\OptionalSeparateBuilderTrait
+     * @see \Illuminate\Database\Eloquent\EnforcedSeparateBuilderTrait
+     * @see \Illuminate\Database\Eloquent\OptionalSeparateBuilderTrait
      */
     abstract protected function getCustomBuilderClass();
 
@@ -164,8 +167,8 @@ trait BaseTrait
      * @return string|null the name of the class to use as the collection,
      *         or null if there is no custom collection.
      *
-     * @see \John\Eloquent\EnforcedSeparateCollectionTrait
-     * @see \John\Eloquent\OptionalSeparateCollectionTrait
+     * @see \Illuminate\Database\Eloquent\EnforcedSeparateCollectionTrait
+     * @see \Illuminate\Database\Eloquent\OptionalSeparateCollectionTrait
      */
     abstract protected function getCustomCollectionClass();
 

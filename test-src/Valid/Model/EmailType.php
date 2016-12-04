@@ -1,12 +1,12 @@
 <?php
 
-namespace John\Eloquent\Test\Valid\Model;
+namespace Illuminate\Database\Eloquent\Test\Valid\Model;
 
 class EmailType extends \Illuminate\Database\Eloquent\Model {
-  use \John\Eloquent\BaseTrait, \John\Eloquent\EnforcedSeparateBuilderTrait, \John\Eloquent\EnforcedSeparateCollectionTrait;
+  use \Illuminate\Database\Eloquent\SeparateConcernsTrait, \Illuminate\Database\Eloquent\EnforcedSeparateBuilderTrait, \Illuminate\Database\Eloquent\EnforcedSeparateCollectionTrait;
 
   public function userEmails() {
-    return $this->hasMany('John\Eloquent\Test\Valid\Model\EmailType', 'email_types_id', 'email_types_id');
+    return $this->hasMany('Illuminate\Database\Eloquent\Test\Valid\Model\EmailType', 'email_types_id', 'email_types_id');
   }
 
 }
