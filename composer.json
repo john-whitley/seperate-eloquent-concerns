@@ -36,7 +36,7 @@
         "phpunit": "phpunit",
         "phpmd": "phpmd John/ text cleancode,codesize,controversial,design,naming,unusedcode",
         "phpcs": "phpcs -s --standard=./CodeSnifferRuleset.xml John",
-        "phpcbf": "phpcbf -s --standard=PSR2 John"
+        "phpcbf": "phpcbf -s --standard=./CodeSnifferRuleset.xml John"
     },
     "require-dev": {
         "phpunit/phpunit": "^5.6",
