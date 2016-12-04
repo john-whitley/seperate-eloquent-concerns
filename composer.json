@@ -35,7 +35,7 @@
         ],
         "phpunit": "phpunit",
         "phpmd": "phpmd John/ text cleancode,codesize,controversial,design,naming,unusedcode",
-        "phpcs": "phpcs -s --standard=PSR2 John",
+        "phpcs": "phpcs -s --standard=./CodeSnifferRuleset.xml John",
         "phpcbf": "phpcbf -s --standard=PSR2 John"
     },
     "require-dev": {
@@ -43,5 +43,8 @@
         "orchestra/testbench": "^3.3",
         "squizlabs/php_codesniffer": "2.*",
         "phpmd/phpmd": "^2.5"
+    },
+    "support": {
+        "issues": "https://github.com/john-whitley/seperate-eloquent-concerns/issues"
     }
 }
